@@ -136,10 +136,6 @@
            <type>jar</type>
            <scope>provided</scope>
        </dependency>
-	   <dependency>
-        <groupId>org.inventivetalent</groupId>
-        <artifactId>menubuilder</artifactId>
-        <version>1.0.2</version>
-    </dependency>
+	   
 	</dependencies>
 </project>
