@@ -1,0 +1,74 @@
+NoPermission: '&cYou do not have permission to do this.'
+UnknownCommand: '&cUnknown command.'
+Reloaded: '&9&lFreaky&1&lEnchants&b successfully reloaded.'
+Currency:
+  Unknown: '&cUnknown currency type (xp, vault, or token).'
+  Set: '&7Set active currency type to &e%type%&7.'
+Token:
+  Give: '&7Successfully gave &e%target% &a%amo% &7token%s%, they now have &b%total%&7.'
+  Set: '&7Successfully set &e%target%&7 to have &b%total% &7token%s%.'
+  Get: '&e%target% &7has &b%total%&7 token%s%&7.'
+  Insufficient: '&cYou have insufficient funds. (&4%total% &cof &a%cost%&c).'
+  Missing: '&cYou must specify a number.'
+Outdated:
+  Console: '&4[WARNING] &dFreakyEnchants &cis outdated. (Current version: &e%ver%&c
+    Online Version: &e%oVer%&c)'
+  InGame: '&d&lFreakyEnchants&7 is &cout of date. &c(Current version: &e%ver%&c Online
+    Version: &e%oVer%&c)'
+  Error: '&4[WARNING] Unable to grab online version for FreakyEnchants.'
+Updated:
+  InGame: '&dFreakyEnchants %ver% &7is &aup to date &7(&aonline version: &2%oVer%&7).'
+NPC:
+  Spawned: '&7Successfully created new NPC.'
+  Deleted: '&7Successfully &cdeleted&7 the closest NPC.'
+  Error: '&cNo nearby NPCs&7.'
+Enchant:
+  Added: '&7Successfully added &e%enchant% %level%&7 to item.'
+  Removed: '&7Successfully removed &e%enchant%&7 from item.'
+  Invalid: '&cUnable to add &e%enchant%&c to that item.'
+  Click: '&b%enchant% %level%&7 selected, click on the item that you want to enchant.'
+  Air: '&7Hold the item you want to enchant in your hand.'
+  Unused: '&7No item specified. The enchantment has been added to your tokens. Type
+    &a/redeem &7to redeem purchased enchantments.'
+  Unknown: '&cUnknown enchantment.'
+  Give:
+    Sender: '&7Successfully gave a &e%ench% %level%&7 token to &a%target%&7.'
+    Receiver: '&e%sender% &7gave you a &e%ench% %level%&7 enchantment token. Type
+      &a/redeem &7to redeem it.'
+InventoryFull:
+  Title:
+    Enabled: true
+    Top: '&c&lINVENTORY FULL'
+    Bottom: '&7Your inventory is full!'
+  ChatMessage: '&c&l[WARNING] &7Your inventory is full!'
+  ActionBarMessage:
+    Enabled: true
+    Message: '&4[INVENTORY] &cYour inventory is full!'
+  Sound:
+    Enabled: true
+    Name: NOTE_PLING
+    Volume: 2
+    Pitch: 2
+Help:
+  token:
+  - '&e<> &fOptional &e[] &fRequired'
+  - perm:freakyenchants.token.give &e/token give [Player] [Amount] &f- Gives the player tokens
+  - perm:freakyenchants.token.set &e/token set [Player] [Amount] &f- Sets a player's tokens
+  - perm:freakyenchants.token.shop &e/token shop &f- Opens the shop GUI
+  - perm:freakyenchants.token.get &e/token get [Player] &fGets how many tokens a player has
+  giveenchant:
+  - '&e<> &fOptional &e[] &fRequired'
+  - '&e/giveenchant [Player] [Enchantment] <Level> &f- Gives the player the specified
+    enchantment'
+  addenchant:
+  - '&e<> &fOptional &e[] &fRequired'
+  - '&e/addenchant [Enchantment|All] <Level> &f- Enchants the item in your hand'
+  - '&e/addenchant applicable <Level> &f- Adds all applicable enchantments to your hand'
+  default:
+  - '&e<> &fOptional &e[] &fRequired'
+  - '&e/freakyenchants help &f- Displays this help message'
+  - '&e/freakyenchants version &f- Checks online version'
+  - '&e/freakyenchants changelog &f- Prints out online changelog'
+  - '&e/freakyenchants setcurrency <Type> &f- Sets FE''s currency type'
+  - '&e/freakyenchants reload &f- Reloads FE''s config, lang, cost, and gui files.'
+  - '&e/freakyenchants reset &f- Resets FE''s config, lang, cost, and gui files.'

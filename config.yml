@@ -1,0 +1,719 @@
+#If you modify anything in this config, all comments and notations will be removed.
+#You can view an online version of this at https://github.com/MSWS/FreakyEnchants/blob/master/config.yml
+
+#############################
+#                           #
+#      Global Settings      #
+#                           #
+#############################
+
+#How status messages will be sent.
+#ACTIONBAR: Messages will be sent via the action bar
+#CHAT: Messages will be sent via chat - May get spammy
+StatusMessages: ACTIONBAR #Options: ACTIONBAR, CHAT
+
+ConfigVersion: '1.2.1' #I recommend not changing this. This will notify you if your config is outdated.
+
+#NPC Settings
+NPC:
+  Type: VILLAGER #The EntityType that the entity will be
+  Name: '&a&lEnchanter' #The name that will be visible above the NPC's head
+  AllowRightClick: true
+  AllowLeftClick: true
+  
+Updater:
+  OnEnable: true #If true, FreakyEnchants will log in console when enabled if a new version is available
+  OnJoin: true #If true, players with permission freakyenchants.autoupdater will be notified about new versions
+
+Changelog: #If true, FreakyEnchants will grab the changelog from Github and display them in console/game
+  OnEnable: true
+  OnJoin: true
+
+Economy:
+#What sort of economy/currency should be used? TOKEN is FreakyEnchant's custom currency
+#Set to vault if you want to use with Essentials or other Vault compatible plugins
+#XP is the player's experience level
+  Type: TOKEN #Options: TOKEN, VAULT, XP
+  Precision: 2
+
+#What world(s) will certain enchantments be disabled in?
+DisabledWorlds:
+  All: #All enchantments will be disabled in these worlds
+  - world_nether
+  excavation: #The excavation enchantment will be disabled in these worlds
+  - world_the_end
+ #autograb: #(This would disable autograb in the "nograbbing" world)
+ #- nograbbing
+
+#############################
+#                           #
+#      Sound Settings       #
+#                           #
+#############################
+Sounds:
+  GoToMain:
+    Name: BAT_LOOP
+    Volume: 2
+    Pitch: 2
+   #Enabled: false #If you want to disable certain sounds
+  PurchasedEnchantment: #In /enchanter GUI
+    Name: LEVEL_UP
+    Volume: 2
+    Pitch: 2
+  SelectedEnchantment: #In /redeem GUI
+    Name: CLICK
+    Volume: 2
+    Pitch: 2
+  InsufficientFunds:
+    Name: VILLAGER_NO
+    Volume: 2
+    Pitch: 2
+  IterateLevels:
+    Name: NOTE_PLING
+  NextInventory:
+    Name: CLICK
+    Volume: 1
+    Pitch: 2
+  EnchantmentAdded:
+    Name: LEVEL_UP
+    Volume: 2
+    Pitch: 1
+  OpenEnchantmentInventory:
+    Name: ANVIL_USE
+    Volume: 1
+    Pitch: 2
+  CloseEnchantmentInventory:
+    Name: ENDERMAN_TELEPORT
+    Pitch: 2
+  OpenRedeemInventory:
+    Name: CHEST_OPEN
+    Volume: .5
+    Pitch: 1
+  CloseRedeemInventory:
+    Name: CHEST_CLOSE
+    Volume: .5
+  TokenDeleted:
+    Name: ANVIL_BREAK
+    Volume: 1.5
+    Pitch: .5
+
+#############################
+#                           #
+#       GUI Settings        #
+#                           #
+#############################    
+EnchantmentSuffix:
+  Level:
+  - ''
+  - '&7(Right-Click to go up to &e%level% levels&7)'
+  Price:
+  - ''
+  - '&a&lPrice: &a%price% Token%s%'
+DefaultSpawnedItemsType: 'COMMAND'
+NoTokens:
+  Icon: 'BARRIER'
+  Name: '&c&lNo tokens'
+  Lore:
+  - '&7You do not have any'
+  - '&7redeemable tokens'
+  - ''
+  - '&7Purchase some with &a/enchanter'
+TokenTitle: '&e&lEnchantment Token'
+TokenDeleteLine: '&c&l[Q] To Delete'
+TokenAmountUsesEnchantmentLevel: true #If true, token amounts will be set to the enchantment's level
+
+#############################
+#                           #
+#   Enchantment Settings    #
+#                           #
+#############################
+
+#Probability:
+#  1: 5 #The level I enchantment will have a %5 chance of activating
+#  2: 10 #The level II enchantment will have a %10 chance of activating
+#  5: 20 #The level V enchantment will have a %20 chance of activating
+# Levels III - IV will have a %10 percent as it is the closest lowest specificed chance 
+
+#What blocks will autosmelt affect?
+#For example, IRON_ORE will be changed into IRON_INGOT
+AutoSmeltDrops:
+  IRON_ORE: IRON_INGOT
+  GOLD_ORE: GOLD_INGOT
+  COBBLESTONE: STONE
+WitherPoint:
+  Affects:
+    Generic: true #If unspecified, should WitherPoint affect it?
+    CREEPER: true #Should WitherPoint affect Creepers?
+    PLAYER: true #Should WitherPoint affect Players?
+   #ZOMBIE: false #(This would make WitherPoint not affect Zombies)
+  Probability:
+    1: 2
+    2: 4
+    3: 5
+    4: 10
+    5: 12
+  SecondsPerLevel: 5000
+  EffectType: WITHER
+  Amplifier:
+    1: 0
+    3: 1
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &f&lWITHERED &e&l\u2733\u2726\u2739" #Set to '' to disable, you can safely remove this line
+Excavation:
+  BonusAmount: #The radius that each level will break
+    1: 3
+    2: 5
+    3: 7
+  PlayEffect: true #If true the server will play a block break effect
+  AllowCreative: false
+  IteratePer: 1 #Ticks, 20 ticks in a second
+  MaxBlocks: 500 #Maximum blocks to change per iteration
+  DontBreak: #Blocks that excavation won't break
+  - BEDROCK
+  - OBSIDIAN
+Rage:
+  Multiplier:
+    1: 1.05
+    2: 1.1
+    3: 1.2
+    4: 1.3
+    5: 1.5
+  ResetAfterKill: true #If true then the multiplier will be reset once the player kills an entity
+ToxicPoint:
+  Affects:
+    Generic: true
+    CREEPER: true
+    PLAYER: true
+  Probability:
+    1: 5
+    2: 10
+    3: 12
+    4: 15
+    5: 20
+  SecondsPerLevel: 5000
+  EffectType: POISON
+  Amplifier:
+    1: 0
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &5&lPOISONED &e&l\u2733\u2726\u2739"
+InstaK:
+  Affects:
+    Generic: true
+    CREEPER: true
+    PLAYER: false
+  Probability:
+    1: 5
+    2: 10
+    3: 12
+    4: 15
+    5: 20
+  MinHealth: 15
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &5&lKO &e&l\u2733\u2726\u2739"
+Freeze:
+  Affects:
+    Generic: true
+    CREEPER: true
+    PLAYER: true
+  Probability:
+    1: 5
+    2: 7
+    3: 10
+    4: 13
+    5: 15
+  SecondsPerLevel: 5000
+  EffectType: SLOW
+  Amplifier:
+    1: 0
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &d&lSLOWNESS &e&l\u2733\u2726\u2739"
+Revive:
+  MinimumHealth: 5 #The minimum level of health (0-20) that is required for the enchantment to work
+  BonusAmount: #How much health points each level should restore
+    1: 3
+    2: 5
+    3: 8
+  Probability:
+    1: 5
+    2: 10
+    3: 15
+    4: 17
+    5: 20
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &a&lREGENERATED &e&l\u2733\u2726\u2739"
+StormBreaker:
+  Probability:
+    1: 1
+    2: 2
+    3: 5
+    4: 10
+    5: 15
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &e&lSMITED &e&l\u2733\u2726\u2739"
+Nightshade:
+  Affects:
+    Generic: true
+    CREEPER: true
+    PLAYER: true
+  Probability:
+    1: 5
+    2: 7
+    3: 10
+    4: 13
+    5: 15
+  SecondsPerLevel: 5000
+  EffectType: BLINDNESS
+  Amplifier:
+    1: 0
+    4: 2
+    5: 3
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &7&lBLINDED &e&l\u2733\u2726\u2739"
+Severed:
+  Probability:
+    1: 1
+    2: 2
+    3: 4
+    4: 5
+    5: 10
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &3&lSKULL DROP &e&l\u2733\u2726\u2739"
+Hearty:
+  BonusAmount: #Note that this effect stacks with multiple pieces of armor
+    1: 2
+    2: 3
+    3: 4
+    4: 5.5
+    5: 6
+    
+### The armor below supports XP requirements. CheckEvery is how often the XP will be decreased (in milliseconds)
+#   XPAmo is the amount of XP that will be removed every check
+Spring:
+  EffectType: JUMP
+  Amplifier:
+    1: 0
+    2: 1
+    3: 2
+  CheckEvery:
+    1: 999999
+  XPAmo:
+    1: 0
+Speed:
+  EffectType: SPEED
+  Amplifier:
+    1: 0
+    2: 1
+    3: 3
+  CheckEvery:
+    1: 999999
+  XPAmo:
+    1: 0
+HeatShield:
+  EffectType: FIRE_RESISTANCE
+  Amplifier:
+    1: 0
+  CheckEvery:
+    1: 999999
+  XPAmo:
+    1: 0
+Invisible:
+  EffectType: INVISIBILITY
+  Amplifier:
+    1: 0
+  CheckEvery:
+    1: 1000
+  XPAmo:
+    1: 5
+Summoner:
+  Probability:
+    1: 5
+    2: 10
+  EntityType: IRON_GOLEM #It is recommended to set this to a Creature, one that can target Players
+  #(Examples: Iron golem, wolves, snowmen, etc.)
+  BonusAmount:
+    1: 1
+    2: 2
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &7&lSUMMONED &e&l\u2733\u2726\u2739"
+Stun:
+  Probability:
+    1: 10
+    2: 15
+    3: 20
+  BonusAmount: #How long each level will stun the target in milliseconds
+    1: 3000
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &e&lSTUNNED &e&l\u2733\u2726\u2739"
+WitherShot:
+  SecondsPerLevel: 5000
+  EffectType: WITHER
+  Probability:
+    1: 10
+    2: 20
+  Amplifier:
+    1: 0
+    3: 1
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &f&lWITHERED &e&l\u2733\u2726\u2739"
+ToxicShot:
+  SecondsPerLevel: 5000
+  EffectType: POISON
+  Probability:
+    1: 5
+    2: 20
+  Amplifier:
+    1: 0
+    3: 1
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &5&lPOISONED &e&l\u2733\u2726\u2739"
+Barrage:
+  RequireFullCharge: true
+  UseInventoryArrows: true
+  AllowInfinity: true
+  OffsetInaccuracy: .5 #The distance between each arrow
+  Spread: 1.0 #The spread of the arrows
+  Speed: 3.0 #The speed of the arrows
+  BonusAmount: #How many extra arrows will be shot per level
+    1: 2
+    2: 3
+    3: 5
+ExtraXP:
+  MustBeSolid: true #If true then the mined block must be solid
+  Probability: #The probability (per block) to reward the player
+    1: 5
+    2: 8
+    3: 10
+    4: 12
+    5: 15
+  BonusAmount: #The amount of XP to reward
+    1: 1
+    3: 2
+    5: 3
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &a&lXP GAINED &e&l\u2733\u2726\u2739"
+SelfDestruct:
+  BreakBlocks: false
+  BonusAmount: #Explosion power
+    1: 1
+    2: 2
+    3: 3
+EnderShot:
+  Cooldown:
+    Actionbar:
+      Enabled: true
+      Message: '&7(EnderShot) %bar% &7%time%'
+      CompleteMessage:  "&e&l\u2739\u2726\u2733 &d&lEnderShot Refreshed &e&l\u2733\u2726\u2739"
+      Bar:
+        Length: 20
+        ProgChar: "&c\u258D"
+        LeftChar: "&4\u258D"
+    Sound:
+      Enabled: true
+      Name: NOTE_PLING
+      Pitch: 2
+      Volume: 2
+    Chat:
+      #Message: '&5&l[&5EnderShot &erefreshed&5&l]'
+  TeleportSound:
+    Enabled: true
+    Name: ENDERMAN_TELEPORT
+    Pitch: 1
+    Volume: 2
+  DeleteArrow: true
+  BonusAmount: #Cooldown duration (in milliseconds)
+    1: 20000
+    2: 18000
+    3: 15000
+    4: 12000
+    5: 10000
+Burning:
+  Probability:
+    1: 5
+    2: 10
+    3: 15
+    4: 20
+    5: 25
+  BonusAmount: #Fireticks per level (20 ticks in a second)
+    1: 20
+    2: 30
+    3: 40
+    4: 80
+    5: 100
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &6&lENFLAMED &e&l\u2733\u2726\u2739"
+TreeFeller:
+  BonusAmount: #Delay (in ticks) per log block
+    1: 10
+    2: 8
+    3: 5
+    4: 3
+    5: 1
+  Sound:
+    Name: DIG_WOOD
+    Pitch: 1
+    Volume: 2
+FrostWalker:
+  BonusAmount: #Range of effect
+    1: 3
+    2: 4
+    3: 5
+    4: 6
+    5: 7
+  Lifetime: #How long the blocks will stay in ticks
+    1: 100
+    2: 120
+    3: 140
+    4: 150
+    5: 200
+  BlockTypes:
+  - 'WOOL:11'
+  - 'WOOL:9'
+  - 'WOOL:3'
+  - 'PACKED_ICE'
+  - 'ICE'
+  - 'STATIONARY_WATER'
+NetherWalker:
+  BonusAmount: #Range of effect
+    1: 2
+    2: 3
+    3: 4
+    4: 5
+    5: 6
+  Lifetime: #How long the blocks will stay in ticks
+    1: 50
+    2: 80
+    3: 100
+    4: 120
+    5: 150
+  BlockTypes:
+  - 'STAINED_CLAY:14'
+  - 'STAINED_CLAY:1'
+  - 'WOOL:1'
+  - 'STAINED_CLAY:4'
+  - 'WOOL:4'
+  - 'LAVA'
+Tripper:
+  BonusAmount: #Amount for vertical KB
+    1: .25
+    2: .3
+    3: .4
+    4: .5
+    5: .75
+DoubleJump:
+  Cooldown:
+    Actionbar:
+      Enabled: true
+      Message: '&7(DoubleJump) %bar% &7%time%'
+      CompleteMessage: "&e&l\u2739\u2726\u2733 &a&lDouble Jump Refreshed &e&l\u2733\u2726\u2739"
+      Bar:
+        Length: 20
+        ProgChar: "&c\u258D"
+        LeftChar: "&4\u258D"
+    Sound:
+      Enabled: true
+      Name: NOTE_PLING
+      Pitch: 2
+      Volume: 2
+    Chat:
+      #Message: '&5&l[&aDoubleJump &erefreshed&5&l]'
+  Strength: 1.5
+  JumpSound:
+    Name: GHAST_FIREBALL
+    Volume: 2
+  BonusAmount: #Cooldown duration (in milliseconds)
+    1: 15000
+    2: 13000
+    3: 10000
+    4: 7000
+    5: 5000
+ChainReaction:
+  Reiterate: true #Should entities that be hit also affect entities that are in range of them?
+  Radius: #The radius to damage entities by
+    1: 2
+    2: 2.5
+    3: 3
+    4: 4
+    5: 5
+  Damage:
+    1: 1
+    2: 2
+    3: 2.5
+    4: 3
+    5: 2
+OreSeeking:
+  Cooldown:
+    Actionbar:
+      Enabled: false
+      Message: '&7(OreSeeker) %bar% &7%time%'
+      CompleteMessage: "&e&l\u2739\u2726\u2733 &a&lOre Seeking Refreshed &e&l\u2733\u2726\u2739"
+      Bar:
+        Length: 20
+        ProgChar: "&c\u258D"
+        LeftChar: "&4\u258D"
+    Sound:
+      Enabled: true
+      Name: NOTE_PLING
+      Pitch: 2
+      Volume: 2
+    Chat:
+      Message: "&e&l\u2739\u2726\u2733 &a&lOre Seeking Refreshed &e&l\u2733\u2726\u2739"
+  NotFound: '&cNo ore found.'
+  Found: '&e%type% &7found within &a%distance% &7blocks.'
+  Delay: '&aOre Seeker &7will be available in &e%time%&7.'
+  IncludeOres:
+  - 'DIAMOND_ORE'
+  - 'GOLD_ORE'
+  - 'IRON_ORE'
+  - 'REDSTONE_ORE'
+  - 'LAPIS_ORE'
+  - 'COAL_ORE'
+  - 'QUARTZ_ORE'
+  - 'EMERALD_ORE'
+  BonusAmount: #Cooldown duration (in milliseconds)
+    1: 300000
+    2: 240000
+    3: 180000
+    4: 120000
+    5: 60000
+  Range: #Range for the orechecker
+    1: 5
+    2: 5
+    3: 7
+    4: 8
+    5: 10
+Alarmer:
+  Sound: 'NOTE_PLING'
+  Volume: 2
+  PlayEvery: 5 #How often the sound should be played in ticks
+  IgnoreVanished: true #If true, will ignore players vanished (using Super/Premium Vanish)
+  Range:
+    1: 5
+    2: 7
+    3: 10
+    4: 15
+    5: 20
+Chucker:
+  IgnoreCreative: false
+  ThrowSound:
+    Enabled: true
+    Name: 'PISTON_EXTEND'
+    Pitch: 1
+    Volume: 1.5
+  HitSound:
+    Name: 'BLAZE_HIT'
+  Particle:
+    Enabled: true
+    Type: 'FLAME'
+  DamageAmount:
+    1: 2
+    2: 4
+    3: 5
+    4: 7
+    5: 8
+  ThrowStrength:
+    1: 1
+    2: 1.5
+    3: 2
+    4: 3
+    5: 3.5
+Recall:
+  RecallSound:
+    Name: 'ENDERMAN_TELEPORT'
+Electric:
+  DeleteArrow: false
+  PrepareSound:
+    Name: 'PISTON_EXTEND'
+    Pitch: 2
+  Cooldown:
+    Actionbar:
+      Enabled: true
+      Message: '&7(Electric) %bar% &7%time%'
+      CompleteMessage: "&e&l\u2739\u2726\u2733 &e&lElectric Arrow Refreshed &e&l\u2733\u2726\u2739"
+      Bar:
+        Length: 20
+        ProgChar: "&c\u258D"
+        LeftChar: "&4\u258D"
+    Sound:
+      Enabled: true
+      Name: NOTE_PLING
+      Pitch: 2
+      Volume: 2
+    Chat:
+      Message: "&e&l\u2739\u2726\u2733 &e&lElectric Arrow Refreshed &e&l\u2733\u2726\u2739"
+  Prepared: '&e&lElectirc Arrow Loaded'
+  BonusAmount: #Cooldown
+    '1': 60000
+    '2': 50000
+    '3': 40000
+    '4': 30000
+    '5': 20000
+HookShot:
+  DeleteArrow: false
+  PrepareSound:
+    Name: 'PISTON_EXTEND'
+    Pitch: 1
+  Cooldown:
+    Actionbar:
+      Enabled: true
+      Message: '&7(HookShot) %bar% &7%time%'
+      CompleteMessage: "&e&l\u2739\u2726\u2733 &e&lHook Shot Refreshed &e&l\u2733\u2726\u2739"
+      Bar:
+        Length: 20
+        ProgChar: "&c\u258D"
+        LeftChar: "&4\u258D"
+    Sound:
+      Enabled: true
+      Name: PISTON_RETRACT
+      Pitch: 2
+      Volume: 2
+    Chat:
+      Message: "&e&l\u2739\u2726\u2733 &e&lHook Shot Refreshed &e&l\u2733\u2726\u2739"
+  Prepared: '&7&lHook Shot Loaded'
+  BonusAmount: #Cooldown
+    '1': 120000
+    '2': 100000
+    '3': 80000
+    '4': 50000
+    '5': 25000
+AntiGravity:
+  ApplyTo: #Which blocks should this prevent from falling
+  - 'GRAVEL'
+  - 'SAND'
+  Duration: #How long blocks will be prevented from falling
+    1: 5000
+    2: 10000
+    3: 15000
+    4: 20000
+    5: 30000
+Repairer:
+  Probability:
+    1: 1
+    2: 2
+    3: 3
+    4: 5
+    5: 10
+  BonusAmount: #Amount of durability to repair
+    1: 5
+    2: 4
+    3: 3
+    4: 3
+    5: 2
+  SuccessMessage: "&e&l\u2739\u2726\u2733 &6&lRepaired &e&l\u2733\u2726\u2739"
+XPHeal: #Delay is how long it takes for healing to start, Cooldown is how often the player will be healed
+  Delay:
+    1: 10000
+    2: 10000
+    3: 8000
+    4: 6000
+    5: 5000
+  Cooldown:
+    1: 2500
+    2: 2000
+    3: 1500
+    4: 1000
+    5: 500
+  Points:
+    1: .5
+    2: .6
+    3: .75
+    4: .8
+    5: 1
+  XPPerHP: #How many XP points will be used up for each HP
+    1: 20
+    2: 15
+    3: 10
+    4: 5
+Flight:
+  CheckEvery: 1000 #In milliseconds
+  XPPerCheck: #Optional amount of Xp to use up during flight, set to 0 to disable
+    1: 50
+    2: 35
+    3: 20
+    4: 15
+    5: 10

@@ -1,0 +1,416 @@
+MainMenu:
+  Title: Category Selection
+  Size: 45
+  sword:
+    Icon: DIAMOND_SWORD
+    Name: '&e&lSword Enchantments'
+    Slot: 10
+    NextInventory: SwordEnchants
+    HideAttributes: true
+    Amount: 8
+    Lore:
+    - '&b&lEnchantments'
+    - '&7 - Nightshade'
+    - '&7 - Tripper'
+    - '&7 - Wither Point'
+    - '&7 - &aRevive'
+    - '&7 - &cRage'
+    - '&7 - &bFreeze'
+    - '&7 - &dChain Reaction'
+    - '&7 - &5Toxic Point'
+  pick:
+    Icon: DIAMOND_PICKAXE
+    Name: '&e&lPickaxe Enchantments'
+    Slot: 28
+    NextInventory: PickaxeEnchants
+    HideAttributes: true
+    Amount: 7
+    Lore:
+    - '&b&lEnchantments'
+    - '&7 - &fAutoSmelt'
+    - '&7 - &aExtraXP'
+    - '&7 - &eExcavation'
+    - '&7 - &cExplosion'
+    - '&7 - &3AutoGrab'
+    - '&7 - &dOreSeeking'
+    - '&7 - &dAntiGravity'
+  axe:
+    Icon: DIAMOND_AXE
+    Name: '&e&lAxe Enchantments'
+    Slot: 34
+    NextInventory: AxeEnchants
+    HideAttributes: true
+    Amount: 8
+    Lore:
+    - '&b&lEnchantments'
+    - '&7 - Nightshade'
+    - '&7 - Wither Point'
+    - '&7 - &eStormbreaker'
+    - '&7 - &bChucker'
+    - '&7 - &bRecall'
+    - '&7 - &cSevered'
+    - '&7 - &5Toxic Point'
+    - '&7 - &dTree Feller'
+  bow:
+    Icon: BOW
+    Name: '&e&lBow Enchantments'
+    Slot: 13
+    NextInventory: BowEnchants
+    Amount: 7
+    Lore:
+    - '&b&lEnchantments'
+    - '&7 - Wither Shot'
+    - '&7 - &eStun'
+    - '&7 - &eElectric'
+    - '&7 - &cExplosive'
+    - '&7 - &dBarrage'
+    - '&7 - &5Ender Shot'
+    - '&7 - &5Toxic Shot'
+  armor:
+    Icon: DIAMOND_CHESTPLATE
+    Name: '&e&lArmor Enchantments'
+    Slot: 16
+    NextInventory: ArmorEnchants
+    Amount: 12
+    Lore:
+    - '&b&lEnchantments'
+    - '&7 - &bFrostWalker'
+    - '&7 - &eSoftTouch'
+    - '&7 - &2Alarmer'
+    - '&7 - &dSummoner'
+    - '&7 - &dDoubleJump'
+    - ''
+    - '&7&oand &e&o7 &7&omore...'
+  balance:
+    Icon: BOOK
+    Name: '&a&l%balance% Tokens'
+    Commands:
+     - 'say %player% has %balance% tokens' #Placeholders: %player%, %balance%, %uuid%, %world%
+    Slot: 31
+  BACKGROUND_ITEM:
+    Icon: STAINED_GLASS_PANE
+    Name: ''
+    Data: 3
+SwordEnchants:
+  Title: Sword Enchantments
+  Size: 45
+  witherpoint:
+    Icon: SKULL_ITEM
+    Data: 1
+    Name: '&7&lWither Point %level%'
+    Slot: 10
+    Lore:
+    - '&7Has a small chance of dealing a Wither Effect.'
+  toxicpoint:
+    Icon: POTION
+    Data: 8196
+    Name: '&5&lToxic Point %level%'
+    Slot: 12
+    Lore:
+    - '&7Has a small chance of dealing a &5Poison Effect&7.'
+  revive:
+    Icon: GOLDEN_APPLE
+    Name: '&a&lRevive %level%'
+    Slot: 14
+    Lore:
+    - '&7Has a small chance of &ahealing you&7 when healt is low&7.'
+  rage:
+    Icon: DIAMOND_SWORD
+    Name: '&c&lRage %level%'
+    Slot: 16
+    Lore:
+    - '&7For every combo hit you land,'
+    - '&7total damage is multiplied by &b1.1&7.'
+  freeze:
+    Icon: ICE
+    Name: '&b&lFreeze %level%'
+    Slot: 28
+    Lore:
+    - '&7Has a small chance of dealing a &bSlowness Effect&7.'
+  tripper:
+    Icon: LEATHER_BOOTS
+    Name: '&7&lTripper %level%'
+    Slot: 30
+    Lore:
+    - '&7Entities you hit will be thrown directly vertically.'
+  chainreaction:
+    Icon: STRING
+    Name: '&d&lChain Reaction %level%'
+    Slot: 32
+    Lore:
+    - '&7Damage entities nearby the entity you originally hit.'
+  nightshade:
+    Icon: COAL
+    Name: '&7&lNightshade %level%'
+    Slot: 34
+    Lore:
+    - '&7Has a small chance of dealing a Blindness Effect.'
+  BACKGROUND_ITEM:
+    Icon: STAINED_GLASS_PANE
+    Name: ''
+    Data: 14
+PickaxeEnchants:
+  Title: Pickaxe Enchantments
+  Size: 36
+  explosion:
+    Icon: TNT
+    Name: '&c&lExplosion %level%'
+    Slot: 10
+    Lore:
+    - '&7Creates an explosion that breaks many nearby blocks.'
+  excavation:
+    Icon: DIAMOND_SPADE
+    Name: '&e&lExcavation %level%'
+    HideAttributes: true
+    Slot: 12
+    Lore:
+    - '&7Breaks blocks in a certain radius.'
+  autograb:
+    Icon: HOPPER
+    Name: '&3&lAutoGrab %level%'
+    Slot: 14
+    Lore:
+    - '&7Automatically teleports items into your inventory.'
+  autosmelt:
+    Icon: IRON_INGOT
+    Name: '&f&lAutoSmelt %level%'
+    Slot: 16
+    Lore:
+    - '&7Automatically smelts certain ores and blocks.'
+  extraxp:
+    Icon: EXP_BOTTLE
+    Name: '&a&lExtra XP'
+    Slot: 20
+    Lore:
+    - '&7Has a small chance of giving you &eExperience Points&7.'
+  oreseeking:
+    Icon: DIAMOND_ORE
+    Name: '&d&lOre Seeking %level%'
+    Slot: 22
+    Lore:
+    - '&7Locates nearby ores when you Right-Click'
+  antigravity:
+    Icon: GRAVEL
+    Name: '&d&lAntiGravity %level%'
+    Slot: 24
+    Lore:
+    - '&7Prevent gravel and sand from falling'
+  BACKGROUND_ITEM:
+    Icon: STAINED_GLASS_PANE
+    Name: ''
+    Data: 7
+AxeEnchants:
+  Title: Axe Enchantments
+  Size: 45
+  stormbreaker:
+    Icon: BLAZE_ROD
+    Name: '&e&lStormbreaker %level%'
+    Slot: 28
+    Lore:
+    - '&7Has a small chance of &esmiting&7 your opponent.'
+  nightshade:
+    Icon: COAL
+    Name: '&7&lNightshade %level%'
+    Slot: 14
+    Lore:
+    - '&7Has a small chance of dealing a Blindness Effect.'
+  severed:
+    Icon: SKULL_ITEM
+    Data: 3
+    Slot: 10
+    Owner: MSWS
+    Name: '&c&lSevered %level%'
+    Lore:
+    - '&7Has a small chance to drop your opponent''s'
+    - '&7skull when you kill them.'
+  witherpoint:
+    Icon: SKULL_ITEM
+    Data: 1
+    Name: '&7&lWither Point %level%'
+    Slot: 12
+    Lore:
+    - '&7Has a small chance of dealing a Wither Effect.'
+  toxicpoint:
+    Icon: POTION
+    Data: 8196
+    Name: '&5&lToxic Point %level%'
+    Slot: 16
+    Lore:
+    - '&7Has a small chance of dealing a &5Poison Effect&7.'
+  treefeller:
+    Icon: LOG
+    Name: '&d&lTree Feller %level%'
+    Slot: 34
+    Lore:
+    - '&7Automatically harvest treees'
+  chucker:
+    Icon: SNOW_BALL
+    Name: '&b&lChucker %level%'
+    Slot: 30
+    Lore:
+    - '&7Throw your axe around,'
+    - '&7deals damage if it hits'
+  recall:
+    Icon: STRING
+    Slot: 32
+    Name: '&b&lRecall %level%'
+    Lore:
+    - '&7Automatically teleports your'
+    - '&7weapon back to you if you miss'
+    - '&7with Chucker'
+  BACKGROUND_ITEM:
+    Icon: STAINED_GLASS_PANE
+    Name: ''
+    Data: 9
+BowEnchants:
+  Title: Bow Enchantments
+  Size: 36
+  explosive:
+    Icon: TNT
+    Name: '&c&lExplosive %level%'
+    Slot: 20
+    Lore:
+    - '&7Arrows will explode on impact'
+  stun:
+    Icon: SLIME_BALL
+    Name: '&e&lStun %level%'
+    Slot: 12
+    Lore:
+    - '&7Has a small chance to stun an enemy for a short time.'
+  barrage:
+    Icon: ARROW
+    Name: '&d&lBarrage %level%'
+    Slot: 14
+    Lore:
+    - '&7Shoot many arrows at once.'
+  withershot:
+    Icon: SKULL_ITEM
+    Data: 1
+    Name: '&7&lWither Shot %level%'
+    Slot: 10
+    Lore:
+    - '&7Has a small chance of dealing a Wither Effect.'
+  toxicshot:
+    Icon: POTION
+    Data: 8196
+    Name: '&5&lToxic Shot %level%'
+    Slot: 16
+    Lore:
+    - '&7Has a small chance of dealing a &5Poison Effect&7.'
+  endershot:
+    Icon: ENDER_PEARL
+    Name: '&5&lEnderShot %level%'
+    Slot: 22
+    Lore:
+    - '&7Teleport where your arrow lands (with cooldown)'
+  electric:
+    Icon: NETHER_STAR
+    Name: '&e&lElectric %level%'
+    Slot: 24
+    Lore:
+    - '&7Summons Lightning where you arrow lands'
+    - '&7(with cooldown)'
+    - ''
+    - '&7&oLeft-Click to use'
+  BACKGROUND_ITEM:
+    Icon: STAINED_GLASS_PANE
+    Name: ''
+    Data: 1
+ArmorEnchants:
+  Title: Armor Enchantments
+  Size: 45
+  hearty:
+    Icon: GOLDEN_APPLE
+    Name: '&c&lHearty %level%'
+    Slot: 19
+    Lore:
+    - '&7Increases your max health'
+  spring:
+    Icon: RABBIT_FOOT
+    Name: '&a&lSpring %level%'
+    Slot: 10
+    Lore:
+    - '&7Gives a jump boost when worn'
+    - ''
+    - '&c&lBoots Only'
+  heatshield:
+    Icon: WATER_BUCKET
+    Name: '&6&lHeat Shield %level%'
+    Slot: 12
+    Lore:
+    - '&7Grants immunity to fire'
+  summoner:
+    Icon: IRON_BLOCK
+    Name: '&d&lSummoner %level%'
+    Slot: 28
+    Lore:
+    - '&7Has a small chance to summon'
+    - '&7protectors when melee damaged'
+  selfdestruct:
+    Icon: TNT
+    Name: '&c&lSelf Destruct %level%'
+    Slot: 23
+    Lore:
+    - '&7Creates an &cexplosion &7when killed'
+  burning:
+    Icon: BLAZE_POWDER
+    Name: '&6&lBurning %level%'
+    Slot: 21
+    Lore:
+    - '&7Has a small chance to set'
+    - '&7mobs on &6fire&7 on melee damage'
+  netherwalker:
+    Icon: LAVA_BUCKET
+    Slot: 25
+    Name: '&4&lNetherWalker %level%'
+    Lore:
+    - '&7Ability to walk on lava'
+    - ''
+    - '&c&lBoots Only'
+  speed:
+    Icon: SUGAR
+    Name: '&a&lSpeed %level%'
+    Slot: 14
+    Lore:
+    - '&7Gain permanent speed.'
+    - ''
+    - '&c&lBoots Only'
+  doublejump:
+    Icon: SLIME_BLOCK
+    Name: '&d&lDoubleJump %level%'
+    Slot: 30
+    Lore:
+    - '&7Gain an extra boost by'
+    - '&7double tapping space'
+    - ''
+    - '&c&lBoots Only'
+  frostwalker:
+    Icon: ICE
+    Name: '&b&lFrostWalker %level%'
+    Slot: 32
+    Lore:
+    - '&7Ability to walk on water'
+    - ''
+    - '&c&lBoots Only'
+  alarmer:
+    Icon: NOTE_BLOCK
+    Name: '&2&lAlarmer %level%'
+    Slot: 34
+    Lore:
+    - '&7Be notified of nearby'
+    - '&7mobs and players'
+    - ''
+    - '&c&lHelmet Only'
+  softtouch:
+    Icon: FEATHER
+    Slot: 16
+    Name: '&e&lSoftTouch %level%'
+    Lore:
+    - '&7Crops won''t be damaged'
+    - '&7when you step on them'
+    - ''
+    - '&c&lBoots Only'
+  BACKGROUND_ITEM:
+    Icon: STAINED_GLASS_PANE
+    Name: ''
+    Data: 5

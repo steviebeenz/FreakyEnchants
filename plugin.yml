@@ -1,0 +1,23 @@
+name: FreakyEnchants
+main: org.mswsplex.enchants.msws.FreakyEnchants
+version: 1.1.9
+description: Freaky Enchantments created by MSWS
+softdepend:
+- Vault
+- WorldGuard
+- PlaceholderAPI
+commands:
+  enchanter:
+    usage: /<command>
+  addenchant:
+    usage: /<command> [Enchantment|All]
+  token:
+    usage: /<command>
+  redeem:
+    usage: /<command>
+  giveenchant:
+    usage: /<command> [Player] [Enchantment] <Level>
+  freakyenchants:
+    usage: /<command>
+    aliases:
+    - fe
