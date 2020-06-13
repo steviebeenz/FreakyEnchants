@@ -26,7 +26,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/com/zachsthings/libcomponents/libcomponents-bukkit/1.2/libcomponents-bukkit-1.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/zachsthings/libcomponents/libcomponents-core/1.2/libcomponents-core-1.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/bukkit/bukkit/1.10-R0.1-SNAPSHOT/bukkit-1.10-R0.1-SNAPSHOT.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/sk89q/guavabackport/1.1/guavabackport-1.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/khelekore/prtree/1.5.0/prtree-1.5.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/github/scpketer/marx/1.1-SNAPSHOT/marx-1.1-SNAPSHOT.jar" enabled="true" runInBatchMode="false"/>
@@ -48,4 +47,5 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/io/sentry/sentry/1.7.30/sentry-1.7.30.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/slf4j/slf4j-api/1.7.24/slf4j-api-1.7.24.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/bukkit/bukkit/1.12.2-R0.1-SNAPSHOT/bukkit-1.12.2-R0.1-SNAPSHOT.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>

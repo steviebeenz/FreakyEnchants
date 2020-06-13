@@ -86,6 +86,7 @@ import org.mswsplex.enchants.papi.PAPIHook;
 import org.mswsplex.enchants.utils.MSG;
 import org.mswsplex.enchants.utils.NBTEditor;
 import org.mswsplex.enchants.utils.Utils;
+import org.mswsplex.enchants.utils.UpdateChecker;
 
 import net.milkbowl.vault.economy.Economy;
 
@@ -125,65 +126,7 @@ public class FreakyEnchants extends JavaPlugin {
 		eManager = new EnchantmentManager(this);
 		pManager = new PlayerManager(this);
 
-		changelog = new ArrayList<>();
-
-		try {
-			URL u = new URL("https://raw.githubusercontent.com/MSWS/FreakyEnchants/master/changelog.txt");
-			URLConnection conn = u.openConnection();
-			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			String inputLine;
-			while ((inputLine = in.readLine()) != null) {
-				changelog.add(inputLine);
-			}
-			in.close();
-		} catch (Exception e) {
-			MSG.log("Unable to grab latest changelog.");
-		}
-
-		onlineVer = Utils.getSpigotVersion(64154);
-
-		if (config.getBoolean("Updater.OnEnable")) {
-			if (onlineVer == null) {
-				MSG.log(lang.getString("Outdated.Error"));
-			} else if (MSG.outdated(getDescription().getVersion(), onlineVer)) {
-				MSG.log(lang.getString("Outdated.Console").replace("%ver%", getDescription().getVersion())
-						.replace("%oVer%", onlineVer));
-				if (config.getBoolean("Changelog.OnEnable"))
-					for (String res : changelog)
-						MSG.log(res);
-			}
-		}
-
 		grabDependencies();
-
-		String msg = "";
-		if (!config.contains("ConfigVersion")) {
-			msg = "Your config version is severely out of date and it is highly recommended you reset it.";
-		} else {
-			if (config.getString("ConfigVersion").equals(getDescription().getVersion())) {
-				msg = "Your config is up to date.";
-			} else {
-				switch (config.getString("ConfigVersion")) {
-				case "1.1.8":
-					msg = "&cYour config is out of date, however no new features have been added.";
-					break;
-				case "1.1.7":
-					msg = "&cYour config is out of date, the redeem gui will not use dynamic amounts unless you reset.";
-					break;
-				case "1.1.6":
-					msg = "&cYour config is out of date, FrostWalker and NetherWalker enchantments will not work unless you reset.";
-					break;
-				default:
-					msg = "&4Your config version is severely out of date and it is highly recommended you reset it.";
-					break;
-				}
-			}
-		}
-
-		for (String l : msg.split("\\|"))
-			MSG.log(l);
-		MSG.log("You can view the latest default config at &ahttp://bit.ly/FreakyConfig");
-		MSG.log("It is recommended you keep up to date due to new versions constantly being released.");
 
 		new AddEnchantmentCommand(this);
 		new TokenCommand(this);
@@ -203,6 +146,14 @@ public class FreakyEnchants extends JavaPlugin {
 
 		registerEnchantChecks();
 		refreshNPCs();
+
+		new UpdateChecker(this, 80151).getVersion(version -> {
+			if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
+				MSG.log("There is not a new update available. https://www.spigotmc.org/resources/freaky-enchants.80151/");
+			} else {
+				MSG.log("There is a new update available.");
+			}
+		});
 	}
 
 	public void onDisable() {
