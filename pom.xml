@@ -58,6 +58,10 @@
 			<name>Mojang's Repository</name>
 			<url>https://libraries.minecraft.net/</url>
 		</repository>
+		<repository>
+        	<id>inventive-repo</id>
+        	<url>https://repo.inventivetalent.org/content/groups/public/</url>
+    	</repository>
 	</repositories>
 	<dependencies>
 		<!--Spigot API -->
@@ -132,5 +136,10 @@
            <type>jar</type>
            <scope>provided</scope>
        </dependency>
+	   <dependency>
+        <groupId>org.inventivetalent</groupId>
+        <artifactId>menubuilder</artifactId>
+        <version>1.0.2</version>
+    </dependency>
 	</dependencies>
 </project>
