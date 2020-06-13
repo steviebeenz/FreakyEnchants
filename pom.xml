@@ -58,10 +58,6 @@
 			<name>Mojang's Repository</name>
 			<url>https://libraries.minecraft.net/</url>
 		</repository>
-		<repository>
-    		<id>flogic-releases</id>
-    		<url>https://repo.flogi.cc/artifactory/flogic-releases</url>
-		</repository>
 	</repositories>
 	<dependencies>
 		<!--Spigot API -->
