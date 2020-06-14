@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 language: java
 services:
 - docker
@@ -9,6 +9,6 @@ cache:
 deploy:
   provider: script
   script: "mvn clean install"
-  skip_cleanup: true
+  skip_cleanup: false
   on:
     tags: true
